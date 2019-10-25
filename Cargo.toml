@@ -1,0 +1,19 @@
+[package]
+name = "josa"
+version = "0.1.0"
+authors = ["YujinGaya <yujin.gaya@gmail.com>"]
+
+edition = "2018"
+
+description = "Korean language josa selector"
+license = "MIT"
+keywords = ["korean", "language", "char"]
+categories = ["localization", "text-processing", "value-formatting"]
+
+repository = "https://github.com/YujinGaya/josa"
+documentation = "https://docs.rs/josa"
+
+readme="README.md"
+
+[dependencies]
+hangul = "0.1.2"
