@@ -6,7 +6,7 @@
 Josa is a [Rust] library to select appropriate josas for korean language.
 
 ## Overview
-### Method
+### `push_josa` method
 Josa is an [extension trait] implemented for [`String`] type.
 Its API works just like [`push_str`] method on [`String`].
 
@@ -27,7 +27,7 @@ assert_eq!(sentence, "유진은 고등어가 먹고싶다");
 
 > :warning: Like [`push_str`] does, `push_josa` expects [`String`], not [`str`], as its argument.
 
-### `+`, `+=` Operator
+### `+`, `+=` operator
 You can use `+`, `+=` operator to append josa.
 
 ```rust
@@ -41,12 +41,28 @@ let sentence = format!("{} {} 먹고싶다", user + EunNeun, mackerel + IGa);
 assert_eq!(sentence, "유진은 고등어가 먹고싶다");
 ```
 
+### `select` method
+In case you want to append a josa to formatted text such as `<span>고양이</span>`,
+you can use `select` method.
+
+```rust
+use josa::select;
+use josa::Josa::IGa;
+
+let cat = "고양이";
+let josa = select(cat, IGa).unwrap();
+
+let cat = format!(r#"<span class="bold">{}</span>{}"#, cat, josa);
+
+assert_eq!(cat, r#"<span class="bold">고양이</span>가"#);
+```
+
 ## Usage
 Add `josa` as a dependency in your `Cargo.toml`.
 
 ```toml
 [dependencies]
-josa = "0.1.0"
+josa = "0.1.1"
 ```
 
 then import [`JosaExt`](trait.JosaExt.html) trait in your code:
@@ -65,13 +81,6 @@ use josa::JosaExt;
 See [docs.rs][documentation]
 
 ## Roadmap
-### `select` method
-Sometimes you don't want to mutate your String. For that case, we will provide pure function `select` which returns appropriate josa for given noun.
-
-```rust
-fn select(noun: &str, josa: Josa) -> &str
-```
-
 ### `select` macro
 As soon as [hygiene 2.0 (#54727)][hygiene] arrives stable, we will add support for following macro:
 

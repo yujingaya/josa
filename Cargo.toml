@@ -1,6 +1,6 @@
 [package]
 name = "josa"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["YujinGaya <yujin.gaya@gmail.com>"]
 
 edition = "2018"
@@ -16,4 +16,4 @@ documentation = "https://docs.rs/josa"
 readme="README.md"
 
 [dependencies]
-hangul = "0.1.2"
+hangul = "0.1.3"
