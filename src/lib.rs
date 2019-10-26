@@ -125,7 +125,7 @@
 //! 
 //! # Supported josas
 //!
-//! Currently we supports:
+//! Currently we support:
 //!
 //! - 은/는
 //! - 이/가
@@ -265,7 +265,7 @@ impl Josa {
 ///
 /// It is useful when you are trying to append a josa to formatted text such as `<span>고양이</span>`.
 /// If you try to append a josa to `<span>고양이</span>`, it results in [`Error`](enum.Error.html) because of the last character `>`.
-/// With this method, you can first get an appropriate josa, and then format the text with the that:
+/// With this method, you can first get an appropriate josa, and then format the text with that josa:
 /// ```rust
 /// use josa::select;
 /// use josa::IGa;
@@ -281,7 +281,9 @@ impl Josa {
 /// ```
 ///
 /// # Errors
-/// If given String is an empty String or last character is not a Haugul Syllable, it returns [`Error`](enum.Error.html)
+/// If given String is an empty String
+/// or the last character is not a Haugul Syllable,
+/// it returns [`Error`](enum.Error.html).
 ///
 /// # Example
 /// ```
@@ -304,7 +306,7 @@ pub trait JosaExt {
 }
 
 impl JosaExt for String {
-  /// Appends a given [`Josa`] onto the end of this [`String`].
+  /// Append a given [`Josa`] onto the end of this [`String`].
   ///
   /// Note that it has [edge cases](index.html#edge-cases).
   /// 
