@@ -7,7 +7,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "josa"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "hangul 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]

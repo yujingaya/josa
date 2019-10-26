@@ -62,19 +62,13 @@ Add `josa` as a dependency in your `Cargo.toml`.
 
 ```toml
 [dependencies]
-josa = "0.1.1"
+josa = "0.1.2"
 ```
 
-then import [`JosaExt`](trait.JosaExt.html) trait in your code:
-
+Now you can use josa crate.
 ```rust
-use josa::JosaExt;
-```
-
-Now you can use methods on [`String`].
-```rust
-use josa::JosaExt;
-// 🔥 here..
+use josa::*;
+// Use here..
 ```
 
 ## Documentation
@@ -88,7 +82,7 @@ As soon as [hygiene 2.0 (#54727)][hygiene] arrives stable, we will add support f
 select!("{}{은} {}{가} 먹고싶다", user, mackerel);
 ```
 
-which is more clear compared to current syntax:
+which is terser than current syntax:
 
 ### Hangul enum variants
 As soon as [non-ASCII identifiers (#55467)][ident] arrives stable, we will change the names of josas to Hangul:
