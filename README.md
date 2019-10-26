@@ -12,7 +12,7 @@ Its API works just like [`push_str`] method on [`String`].
 
 ```rust
 use josa::JosaExt;
-use josa::Josa::{EunNeun, IGa};
+use josa::{EunNeun, IGa};
 
 let mut user = "유진".to_owned();
 let mut mackerel = "고등어".to_owned();
@@ -31,7 +31,7 @@ assert_eq!(sentence, "유진은 고등어가 먹고싶다");
 You can use `+`, `+=` operator to append josa.
 
 ```rust
-use josa::Josa::{EunNeun, IGa};
+use josa::{EunNeun, IGa};
 
 let user = "유진".to_owned();
 let mackerel = "고등어".to_owned();
@@ -47,7 +47,7 @@ you can use `select` method.
 
 ```rust
 use josa::select;
-use josa::Josa::IGa;
+use josa::IGa;
 
 let cat = "고양이";
 let josa = select(cat, IGa).unwrap();
